@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="jp.hannet.sample.model.PetCustomerMapping" table="customer">
+		
+		<id name="customerId" type="int" unsaved-value="null">
+			<generator class="increment"></generator>
+		</id>
+		<property name="customerName" type="string" column="CUSTOMER_NM" />
+		<property name="customerKana" type="string" column="CUSTOMER_KN" />
+		<property name="sex" type="string" column="SEX" />
+		<property name="postCd" type="string" column="POST_CD" />
+		<property name="address1" type="string" column="ADDRESS1" />
+		<property name="address2" type="string" column="ADDRESS2" />
+		<property name="address3" type="string" column="ADDRESS3" />
+		<property name="address4" type="string" column="ADDRESS4" />
+		<property name="tel" type="string" column="TEL" />
+		<property name="email" type="string" column="EMAIL" />
+		<property name="birthYmd" type="string" column="BIRTH_YMD" />
+		<property name="insYmd" type="string" column="INS_YMD" />
+		<property name="updYmd" type="string" column="UPD_YMD" />
+
+	</class>
+	
+	<class name="jp.hannet.sample.model.PetItemAttributeMapping" table="item_attribute">
+		
+		<id name="itemAttributeNumber" type="int" unsaved-value="null">
+			<column name="ITEM_ATTRIBUTE_NO" sql-type="int" not-null="true"></column>
+			
+		</id>
+		<property name="itemAttributeName" type="string" column="ITEM_ATTRIBUTE_NM" />
+	</class>
+	
+	<class name="jp.hannet.sample.model.PetItemMapping" table="item">
+		
+		<id name="itemCd" type="int" unsaved-value="null">
+			<column name="ITEM_CD" sql-type="char(10)" not-null="true" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="itemName" type="string" column="ITEM_NM" />
+		<property name="itemAttribute" type="string" column="ITEM_ATTRIBUTE" />
+		<property name="itemCost" type="string" column="ITEM_COST" />
+		<property name="itemPrice" type="string" column="ITEM_PRICE" />
+		<property name="insYmd" type="string" column="INS_YMD" />
+		<property name="updYmd" type="string" column="UPD_YMD" />
+	</class>
+	
+	<class name="jp.hannet.sample.model.PetReserveMapping" table="reserve">
+		
+		<id name="reserveId" type="int" unsaved-value="null">
+			<generator class="increment"></generator>
+		</id>
+		<property name="startYmd" type="string" column="START_YMD" />
+		<property name="endYmd" type="string" column="END_YMD" />
+		<property name="checkInYmd" type="string" column="CHECK_IN_YMD" />
+		<property name="checkOutYmd" type="string" column="CHECK_OUT_YMD" />
+		<property name="sellNo" type="string" column="SELL_NO" />
+		<property name="insYmd" type="string" column="INS_YMD" />
+		<property name="updYmd" type="string" column="UPD_YMD" />
+	</class>
+	
+	<class name="jp.hannet.sample.model.PetSellMapping" table="sell">
+		
+		<id name="sellNo" type="int" unsaved-value="null">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="sellYmd" type="string" column="SELL_YMD" />
+		<property name="customerId" type="string" column="CUSTOMER_ID" />
+		<property name="itemCd" type="string" column="ITEM_CD" />
+		<property name="quantity" type="string" column="QUANTITY" />
+		<property name="price" type="string" column="PRICE" />
+		<property name="includingTax" type="string" column="INCLUDING_TAX" />
+		<property name="tax" type="string" column="TAX" />
+		<property name="insYmd" type="string" column="INS_YMD" />
+		<property name="updYmd" type="string" column="UPD_YMD" />
+	</class>
+	
+	<class name="jp.hannet.sample.model.PetUserMapping" table="user">
+		
+		<id name="userId" type="int" unsaved-value="null">
+			<column name="USER_ID" sql-type="int" not-null="true"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="userName" type="string" column="USER_NM" />
+		<property name="userPass" type="string" column="USER_PW" />
+		<property name="insYmd" type="string" column="INS_YMD" />
+		<property name="updYmd" type="string" column="UPD_YMD" />
+	</class>
+</hibernate-mapping>

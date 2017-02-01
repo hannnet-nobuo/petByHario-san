@@ -10,9 +10,9 @@
 	<p>ログイン</p>
 	<p><s:text name="msg" /></p>
 	<s:form action="PetLogin">
-		<s:textfield label="ユーザーID" name="userId" />
-		<s:textfield label="パスワード" name="userPass" />
-		<s:submit type="button" value="login" name="login" >ログイン</s:submit>
+		User id　<input type="text" name="userId" /> <br/>
+		Password<input type="password" name="userPass" /> <br />
+		<input type="submit" value="Login"/>
 	</s:form>
 		
 		

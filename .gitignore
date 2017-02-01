@@ -4,10 +4,6 @@
 *.war
 *.ear
 
-# Eclipse
-.project
-.classpath
-.settings
 
 # Idea
 .idea

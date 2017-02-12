@@ -19,7 +19,7 @@
 		  	<s:iterator value="users"> 
 				<tr>
 					<td>
-						<a href="<s:url namespace="/" action="PersonelEdit" ><s:param name="editid" ></s:param></s:url>" ><s:property value="userId" /></a>
+						<a href="<s:url namespace="/" action="PetUserEdit" ><s:param name="editid" ><s:property value="userId" /></s:param></s:url>" ><s:property value="userId" /></a>
 					</td>
 					
 					<td><s:property value="userName" /></td>

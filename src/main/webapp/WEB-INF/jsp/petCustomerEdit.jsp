@@ -8,9 +8,9 @@
 </head>
 <body>
 	<p>ユーザー編集</p>
-	<s:form action="PetUserEdit">
-		<s:textfield label="ユーザーID" name="userId" readonly="true"/>
-		<s:textfield label="ユーザー名" name="userName" />
+	<s:form action="PetCustomerEdit">
+		<s:textfield label="顧客ID" name="CustomerId" readonly="true"/>
+		<s:textfield label="顧客名" name="CustomerName" />
 		<s:textfield label="パスワード" name="userPass" />
 		<s:submit type="button" value="%{id}" name="delid" >削除</s:submit>
 		<s:submit type="button" value="update" name="update" >確定</s:submit>

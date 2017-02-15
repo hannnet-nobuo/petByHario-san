@@ -123,6 +123,13 @@
             <result>/WEB-INF/jsp/petUserAdmin.jsp</result>            
         </action>
         
+        <action name="PetUserEdit" class="jp.hannet.sample.action.PetUserEditAction">
+            <result>/WEB-INF/jsp/petUserEdit.jsp</result>            
+        </action>
+        
+        <action name="PetUserNew" class="jp.hannet.sample.action.PetUserNewAction">
+            <result>/WEB-INF/jsp/petUserNew.jsp</result>            
+        </action>
         
 		        
         

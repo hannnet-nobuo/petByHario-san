@@ -32,6 +32,7 @@
 			</s:iterator> 
 		</table>
 	</s:form>
-	<p><a href="<s:url namespace="/" action="PersonelNew" ></s:url>" >新規作成</a></p>
+	<p><a href="<s:url namespace="/" action="PersonelNew" ></s:url>" >新規作成</a></p> 
+
 </body>
 </html>

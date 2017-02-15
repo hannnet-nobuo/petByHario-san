@@ -1,0 +1,264 @@
+﻿# A5:ER FORMAT:10
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=ペット予約システム
+Author=株式会社ハンネット
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A4Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=HGSｺﾞｼｯｸM
+FontSize=16
+PaperSize=A4Landscape
+HeaderLeft=%ProjectName%
+HeaderCenter=
+HeaderRight=
+FooterLeft=%Author%
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Comment]
+Comment=部屋の予約も商品として扱う。\n商品属性に、物販と予約という値を作る。\n予約する部屋を追加したい場合、商品に部屋を追加し、商品属性を予約にする。\n物販の商品を追加したい場合、商品属性を物販にする。
+FontName=HGSｺﾞｼｯｸM
+FontBold=0
+FontItalic=0
+FontUnderline=0
+FontSize=11
+FontColor=$000000
+LineColor=$000000
+BkColor=$FFFFFF
+Page=Main
+Left=150
+Top=1450
+Width=1445
+Height=370
+
+[Entity]
+PName=customer
+LName=customer
+Comment=
+TableOption=
+Page=MAIN
+Left=500
+Top=300
+Field="顧客ID","CUSTOMER_ID","int(11) auto_increment","NOT NULL",0,"","",$FFFFFFFF,""
+Field="顧客名","CUSTOMER_NM","varchar(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="顧客名かな","CUSTOMER_KN","varchar(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="性別","SEX","char(1)",,,"","",$FFFFFFFF,""
+Field="郵便番号","POST_CD","char(7)",,,"","",$FFFFFFFF,""
+Field="住所１","ADDRESS1","varchar(50)",,,"","",$FFFFFFFF,""
+Field="住所２","ADDRESS2","varchar(50)",,,"","",$FFFFFFFF,""
+Field="住所３","ADDRESS3","varchar(50)",,,"","",$FFFFFFFF,""
+Field="住所４","ADDRESS4","varchar(50)",,,"","",$FFFFFFFF,""
+Field="電話番号","TEL","char(13)",,,"","",$FFFFFFFF,""
+Field="EMAIL","EMAIL","varchar(50)",,,"","",$FFFFFFFF,""
+Field="生年月日","BIRTH_YMD","date",,,"","",$FFFFFFFF,""
+Field="登録日","INS_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+Field="更新日","UPD_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",500,300
+
+[Entity]
+PName=item
+LName=item
+Comment=
+TableOption=
+Page=MAIN
+Left=1700
+Top=1050
+Field="商品コード","ITEM_CD","char(10)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="商品名","ITEM_NM","varchar(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="商品属性番号","ITEM_ATTRIBUTE","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="原価","ITEM_COST","decimal(10,0)","NOT NULL",,"","",$FFFFFFFF,""
+Field="売値","ITEM_PRICE","decimal(10,0)","NOT NULL",,"","",$FFFFFFFF,""
+Field="登録日","INS_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+Field="更新日","UPD_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+Index=FK_ITEM_ITEM_ATTRIBUTE=0,ITEM_ATTRIBUTE
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",1700,1050
+
+[Entity]
+PName=item_attribute
+LName=item_attribute
+Comment=
+TableOption=
+Page=MAIN
+Left=2400
+Top=1400
+Field="商品属性番号","ITEM_ATRIBUTE_NO","int(11)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="商品属性名","ITEM_ATTRIBUTE_NM","varchar(50)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",2400,1400
+
+[Entity]
+PName=reserve
+LName=reserve
+Comment=
+TableOption=
+Page=MAIN
+Left=1700
+Top=150
+Field="予約番号","RESERVE_ID","int(11) auto_increment","NOT NULL",0,"","",$FFFFFFFF,""
+Field="予約開始日","START_YMD","date","NOT NULL",,"","",$FFFFFFFF,""
+Field="予約終了日","END_YMD","date","NOT NULL",,"","",$FFFFFFFF,""
+Field="チェックイン日","CHECK_IN_YMD","date",,,"","",$FFFFFFFF,""
+Field="チェックアウト日","CHECK_OUT_YMD","date",,,"","",$FFFFFFFF,""
+Field="売上番号","SELL_NO","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="登録日","INS_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+Field="更新日","UPD_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+Index=FK_RESERVE_SELL_NO=0,SELL_NO
+Index=START_YMD=0,START_YMD
+Index=END_YMD=0,END_YMD
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",1700,150
+
+[Entity]
+PName=sell
+LName=sell
+Comment=
+TableOption=
+Page=MAIN
+Left=1000
+Top=600
+Field="売上番号","SELL_NO","int(11)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="売上年月日","SELL_YMD","date","NOT NULL",,"","",$FFFFFFFF,""
+Field="顧客ID","CUSTOMER_ID","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="商品コード","ITEM_CD","char(10)","NOT NULL",,"","",$FFFFFFFF,""
+Field="数量","QUANTITY","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="金額","PRICE","decimal(10,0)","NOT NULL",,"","",$FFFFFFFF,""
+Field="税込金額","INCLUDING_TAX","decimal(10,0)","NOT NULL",,"","",$FFFFFFFF,""
+Field="消費税額","TAX","decimal(10,0)","NOT NULL",,"","",$FFFFFFFF,""
+Field="登録日","INS_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+Field="更新日","UPD_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+Index=FK_SELL_ITEM_CD=0,ITEM_CD
+Index=FK_SELL_CUSTOMER_ID=0,CUSTOMER_ID
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",1000,600
+
+[Entity]
+PName=user
+LName=user
+Comment=
+TableOption=
+Page=MAIN
+Left=50
+Top=300
+Field="ユーザーID","USER_ID","int(11) auto_increment","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザー名","USER_NM","varchar(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","USER_PW","varchar(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="登録日","INS_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+Field="更新日","UPD_YMD","datetime","NOT NULL",,"CURRENT_TIMESTAMP","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",50,300
+
+[Relation]
+Entity1=item_attribute
+Entity2=item
+RelationType1=1
+RelationType2=3
+Fields1=ITEM_ATRIBUTE_NO
+Fields2=ITEM_ATTRIBUTE
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,500,5916,3189,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=50
+Bar2=592
+Bar3=319
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=sell
+Entity2=reserve
+RelationType1=1
+RelationType2=3
+Fields1=SELL_NO
+Fields2=SELL_NO
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,628,4763,6904,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=63
+Bar2=476
+Bar3=690
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=customer
+Entity2=sell
+RelationType1=1
+RelationType2=3
+Fields1=CUSTOMER_ID
+Fields2=CUSTOMER_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,500,6859,2414,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=50
+Bar2=686
+Bar3=241
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=item
+Entity2=sell
+RelationType1=1
+RelationType2=3
+Fields1=ITEM_CD
+Fields2=ITEM_CD
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,500,4763,3474,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=50
+Bar2=476
+Bar3=347
+TermPos1=R
+TermPos2=R

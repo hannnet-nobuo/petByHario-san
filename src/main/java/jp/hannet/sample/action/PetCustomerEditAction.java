@@ -14,7 +14,16 @@ public class PetCustomerEditAction extends ActionSupport {
 	private String editid;
 	private Integer customerId;
 	private String customerName;
-	private String customerPass;
+	private String customerKana;
+	private String sex;
+	private String postCd;
+	private String address1;
+	private String address2;
+	private String address3;
+	private String address4;
+	private String tel;
+	private String email;
+	private String birthYmd;
 	private String update;
 	private HttpParameters param;
 	private Integer delid;
@@ -43,12 +52,84 @@ public class PetCustomerEditAction extends ActionSupport {
 		this.customerName = customerName;
 	}
 
-	public String getCustomerPass() {
-		return customerPass;
+	public String getCustomerKana() {
+		return customerKana;
 	}
 
-	public void setCustomerPass(String customerPass) {
-		this.customerPass = customerPass;
+	public void setCustomerKana(String customerKana) {
+		this.customerKana = customerKana;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public String getPostCd() {
+		return postCd;
+	}
+
+	public void setPostCd(String postCd) {
+		this.postCd = postCd;
+	}
+
+	public String getAddress1() {
+		return address1;
+	}
+
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+
+	public String getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public String getAddress3() {
+		return address3;
+	}
+
+	public void setAddress3(String address3) {
+		this.address3 = address3;
+	}
+
+	public String getAddress4() {
+		return address4;
+	}
+
+	public void setAddress4(String address4) {
+		this.address4 = address4;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public String getBirthYmd() {
+		return birthYmd;
+	}
+
+	public void setBirthYmd(String birthYmd) {
+		this.birthYmd = birthYmd;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public void setCustomerId(Integer customerId) {
@@ -85,12 +166,32 @@ public class PetCustomerEditAction extends ActionSupport {
 			PetCustomerMapping map = dao.selectById(num1);
 			customerId = map.getCustomerId();
 			customerName = map.getCustomerName();
-			customerPass = map.getCustomerPass();
+			customerKana = map.getCustomerKana();
+			sex = map.getSex();
+			postCd = map.getPostCd();
+			address1 =map.getAddress1();
+			address2 =map.getAddress2();
+			address3 =map.getAddress3();
+			address4 =map.getAddress4();
+			tel = map.getTel();
+			email = map.getEmail();
+			birthYmd = map.getBirthYmd();
+			
 		} else if (update != null && customerId != null) {
 			PetCustomerMapping map = new PetCustomerMapping();
 			map.setCustomerId(customerId);
 			map.setCustomerName(customerName);
-			map.setCustomerPass(customerPass);
+			map.setCustomerKana(customerKana);
+			map.setSex(sex);
+			map.setPostCd(postCd);
+			map.setAddress1(address1);
+			map.setAddress2(address2);
+			map.setAddress3(address3);
+			map.setAddress4(address4);
+			map.setTel(tel);
+			map.setEmail(email);
+			map.setBirthYmd(birthYmd);
+			
 			dao.update(map);
 		}
 		

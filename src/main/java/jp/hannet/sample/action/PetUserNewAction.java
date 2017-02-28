@@ -13,6 +13,8 @@ public class PetUserNewAction extends ActionSupport {
 	private String userName;
 	private String userPass;
 	private String insert;
+	private String insYmd;
+	private String updYmd;
 	private String msg;
 
 	public String getMsg() {
@@ -42,6 +44,22 @@ public class PetUserNewAction extends ActionSupport {
 	public void setUserPass(String userPass) {
 		this.userPass = userPass;
 	}
+	
+	public String getInsYmd() {
+		return insYmd;
+	}
+
+	public void setInsYmd(String insYmd) {
+		this.insYmd = insYmd;
+	}
+	
+	public String getUpdYmd() {
+		return updYmd;
+	}
+
+	public void setUpdYmd(String updYmd) {
+		this.updYmd = updYmd;
+	}
 
 	public String getInsert() {
 		return insert;
@@ -62,6 +80,8 @@ public class PetUserNewAction extends ActionSupport {
 			map.setUserId(userId);
 			map.setUserName(userName);
 			map.setUserPass(userPass);
+			map.setInsYmd(insYmd);
+			map.setUpdYmd(updYmd);
 			dao.save(map);
 			msg = "書き込みました";
 		} else {

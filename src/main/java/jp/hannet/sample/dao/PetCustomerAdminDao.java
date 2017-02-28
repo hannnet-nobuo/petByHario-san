@@ -25,7 +25,7 @@ public List<PetCustomerMapping> likeById(Integer id) {
 		
 		if (id != null ) {
 			cr.where(
-				builder.like(root.<String>get("id"), "%" + id + "%")
+				builder.like(root.<String>get("customerId"), "%" + id + "%")
 				);
 		}
 		

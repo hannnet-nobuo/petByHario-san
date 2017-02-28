@@ -20,8 +20,8 @@
 		<property name="tel" type="string" column="TEL" />
 		<property name="email" type="string" column="EMAIL" />
 		<property name="birthYmd" type="string" column="BIRTH_YMD" />
-		<property name="insYmd" type="string" column="INS_YMD" />
-		<property name="updYmd" type="string" column="UPD_YMD" />
+		<property name="insYmd" update="false" insert="false" type="string" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="string" column="UPD_YMD" />
 
 	</class>
 	
@@ -44,8 +44,8 @@
 		<property name="itemAttribute" type="string" column="ITEM_ATTRIBUTE" />
 		<property name="itemCost" type="string" column="ITEM_COST" />
 		<property name="itemPrice" type="string" column="ITEM_PRICE" />
-		<property name="insYmd" type="string" column="INS_YMD" />
-		<property name="updYmd" type="string" column="UPD_YMD" />
+		<property name="insYmd" update="false" insert="false" type="string" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="string" column="UPD_YMD" />
 	</class>
 	
 	<class name="jp.hannet.sample.model.PetReserveMapping" table="reserve">
@@ -58,8 +58,8 @@
 		<property name="checkInYmd" type="string" column="CHECK_IN_YMD" />
 		<property name="checkOutYmd" type="string" column="CHECK_OUT_YMD" />
 		<property name="sellNo" type="string" column="SELL_NO" />
-		<property name="insYmd" type="string" column="INS_YMD" />
-		<property name="updYmd" type="string" column="UPD_YMD" />
+		<property name="insYmd" update="false" insert="false" type="string" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="string" column="UPD_YMD" />
 	</class>
 	
 	<class name="jp.hannet.sample.model.PetSellMapping" table="sell">
@@ -74,8 +74,8 @@
 		<property name="price" type="string" column="PRICE" />
 		<property name="includingTax" type="string" column="INCLUDING_TAX" />
 		<property name="tax" type="string" column="TAX" />
-		<property name="insYmd" type="string" column="INS_YMD" />
-		<property name="updYmd" type="string" column="UPD_YMD" />
+		<property name="insYmd" update="false" insert="false" type="string" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="string" column="UPD_YMD" />
 	</class>
 	
 	<class name="jp.hannet.sample.model.PetUserMapping" table="user">
@@ -86,7 +86,7 @@
 		</id>
 		<property name="userName" type="string" column="USER_NM" />
 		<property name="userPass" type="string" column="USER_PW" />
-		<property name="insYmd" type="string" column="INS_YMD" />
-		<property name="updYmd" type="string" column="UPD_YMD" />
+		<property name="insYmd" update="false" insert="false" type="string" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="string" column="UPD_YMD" />
 	</class>
 </hibernate-mapping>

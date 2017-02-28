@@ -123,6 +123,7 @@
             <result>/WEB-INF/jsp/petUserAdmin.jsp</result>            
         </action>
         
+<<<<<<< HEAD
         <action name="PetUserEdit" class="jp.hannet.sample.action.PetUserEditAction">
             <result>/WEB-INF/jsp/petUserEdit.jsp</result>            
         </action>
@@ -131,17 +132,8 @@
             <result>/WEB-INF/jsp/petUserNew.jsp</result>            
         </action>
         
-        <action name="PetCustomerAdmin" class="jp.hannet.sample.action.PetCustomerAdminAction">
-            <result>/WEB-INF/jsp/petCustomerAdmin.jsp</result>            
-        </action>
-        
-        <action name="PetCustomerEdit" class="jp.hannet.sample.action.PetCustomerEditAction">
-            <result>/WEB-INF/jsp/petCustomerEdit.jsp</result>            
-        </action>
-        
-        <action name="PetCustomerNew" class="jp.hannet.sample.action.PetCustomerNewAction">
-            <result>/WEB-INF/jsp/petCustomerNew.jsp</result>            
-        </action>
+=======
+>>>>>>> origin/master
         
 		        
         

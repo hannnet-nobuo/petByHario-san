@@ -8,13 +8,15 @@ import com.opensymphony.xwork2.ActionSupport;
 import jp.hannet.sample.dao.PetUserEditDao;
 import jp.hannet.sample.model.PetUserMapping;
 
-public class PetUserEditAction extends ActionSupport {
+public class PetUserEditAction extends ActionSupport implements HttpParametersAware{
 	
 	private static final long serialVersionUID = -3521141713234828082L;
 	private String editid;
 	private Integer userId;
 	private String userName;
 	private String userPass;
+	private String insYmd;
+	private String updYmd;
 	private String update;
 	private HttpParameters param;
 	private Integer delid;
@@ -66,11 +68,25 @@ public class PetUserEditAction extends ActionSupport {
 	public void setDelid(Integer delid) {
 		this.delid = delid;
 	}
+	
+	public String getInsYmd() {
+		return insYmd;
+	}
+
+	public void setInsYmd(String insYmd) {
+		this.insYmd = insYmd;
+	}
+	
+	public String getUpdYmd() {
+		return updYmd;
+	}
+
+	public void setUpdYmd(String updYmd) {
+		this.updYmd = updYmd;
+	}
+	
 
 	
-	
-
-
 
 	public String execute() throws Exception {
 		PetUserEditDao dao = new PetUserEditDao();
@@ -91,6 +107,8 @@ public class PetUserEditAction extends ActionSupport {
 			map.setUserId(userId);
 			map.setUserName(userName);
 			map.setUserPass(userPass);
+			map.setInsYmd(insYmd);
+			map.setUpdYmd(updYmd);
 			dao.update(map);
 		}
 		

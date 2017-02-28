@@ -16,6 +16,27 @@ import jp.hannet.sample.model.PetUserMapping;
 
 public class PetUserEditDao {
 	
+	public PetUserMapping selectById(Integer id) {
+		
+		PetUserMapping map = null;
+		if (id != null) {
+			Session session = DbAccess.getSession();
+			CriteriaBuilder builder = session.getCriteriaBuilder();
+			CriteriaQuery<PetUserMapping> cr = builder.createQuery(PetUserMapping.class);
+			
+			Root<PetUserMapping> root = cr.from( PetUserMapping.class );
+			cr.select(root)
+			.where(
+					builder.equal(root.get("userId"), id)
+					);
+			
+			// 結果取得
+			map = (PetUserMapping) session.createQuery(cr)
+					.getSingleResult();
+		}
+		return map;
+	}
+	
 	public void delete(PetUserMapping map) {
 		Transaction txn = null;
 		Session session = null;
@@ -42,27 +63,6 @@ public class PetUserEditDao {
 		} finally {
 			session.close();
 		}
-	}
-	
-	public PetUserMapping selectById(Integer id) {
-		
-		PetUserMapping map = null;
-		if (id != null) {
-			Session session = DbAccess.getSession();
-			CriteriaBuilder builder = session.getCriteriaBuilder();
-			CriteriaQuery<PetUserMapping> cr = builder.createQuery(PetUserMapping.class);
-			
-			Root<PetUserMapping> root = cr.from( PetUserMapping.class );
-			cr.select(root)
-			.where(
-					builder.equal(root.get("id"), id)
-					);
-			
-			// 結果取得
-			map = (PetUserMapping) session.createQuery(cr)
-					.getSingleResult();
-		}
-		return map;
 	}
 
 

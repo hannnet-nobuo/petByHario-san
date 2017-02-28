@@ -6,7 +6,7 @@ import org.hibernate.Transaction;
 import jp.hannet.sample.common.DbAccess;
 import jp.hannet.sample.model.PetCustomerMapping;
 
-public class PetCustomerNew {
+public class PetCustomerNewDao {
 
 	public void save(PetCustomerMapping map) {
 		Transaction txn = null;

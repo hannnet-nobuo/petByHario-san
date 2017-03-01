@@ -17,7 +17,7 @@ public class PetCustomerMapping implements Serializable {
 	private static final long serialVersionUID = -5691674981407366694L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="customerId")
 	
 	private Integer customerId;
 	private String customerName;

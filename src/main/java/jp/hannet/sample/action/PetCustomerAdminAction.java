@@ -26,10 +26,10 @@ private static final long serialVersionUID = -3521141713234828082L;
 	private Integer s_id;
 	private List<PetCustomerMapping> customerMappings;
 	
-	public Integer getcustomerId() {
+	public Integer getCustomerId() {
 		return customerId;
 	}
-	public void setcustomerId(Integer customerId) {
+	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
 	public String getCustomerName() {
@@ -70,7 +70,7 @@ private static final long serialVersionUID = -3521141713234828082L;
 	
 	public String execute() throws Exception {
 		
-		PetCustomerAdminDao dao = new PetCustomerAdminDao ();
+		PetCustomerAdminDao dao = new PetCustomerAdminDao();
 		customerMappings = dao.likeById(s_id);
 		return SUCCESS;
 	}

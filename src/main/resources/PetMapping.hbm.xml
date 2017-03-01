@@ -7,6 +7,7 @@
 	<class name="jp.hannet.sample.model.PetCustomerMapping" table="customer">
 		
 		<id name="customerId" type="int" unsaved-value="null">
+			<column name="CUSTOMER_ID" sql-type="int" not-null="true"></column>
 			<generator class="increment"></generator>
 		</id>
 		<property name="customerName" type="string" column="CUSTOMER_NM" />

@@ -1,5 +1,7 @@
 package jp.hannet.sample.action;
 
+import java.util.Date;
+
 import org.apache.struts2.dispatcher.HttpParameters;
 import org.apache.struts2.interceptor.HttpParametersAware;
 
@@ -107,8 +109,7 @@ public class PetUserEditAction extends ActionSupport implements HttpParametersAw
 			map.setUserId(userId);
 			map.setUserName(userName);
 			map.setUserPass(userPass);
-			map.setInsYmd(insYmd);
-			map.setUpdYmd(updYmd);
+			map.setUpdYmd(new Date());
 			dao.update(map);
 		}
 		

@@ -80,8 +80,6 @@ public class PetUserNewAction extends ActionSupport {
 			map.setUserId(userId);
 			map.setUserName(userName);
 			map.setUserPass(userPass);
-			map.setInsYmd(insYmd);
-			map.setUpdYmd(updYmd);
 			dao.save(map);
 			msg = "書き込みました";
 		} else {

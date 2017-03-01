@@ -86,7 +86,7 @@
 		</id>
 		<property name="userName" type="string" column="USER_NM" />
 		<property name="userPass" type="string" column="USER_PW" />
-		<property name="insYmd" update="false" insert="false" type="string" column="INS_YMD" />
-		<property name="updYmd" update="true" insert="false" type="string" column="UPD_YMD" />
+		<property name="insYmd" update="false" insert="false" type="timestamp" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="timestamp" column="UPD_YMD" />
 	</class>
 </hibernate-mapping>

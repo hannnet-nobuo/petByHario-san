@@ -13,7 +13,7 @@ import jp.hannet.sample.model.MyMapping;
 import jp.hannet.sample.model.PersonelMapping;
 import jp.hannet.sample.model.PetCustomerMapping;
 
-public class PetCustomerAdiminAction extends ActionSupport {
+public class PetCustomerAdminAction extends ActionSupport {
 	
 private static final long serialVersionUID = -3521141713234828082L;
 	
@@ -26,10 +26,10 @@ private static final long serialVersionUID = -3521141713234828082L;
 	private Integer s_id;
 	private List<PetCustomerMapping> customerMappings;
 	
-	public Integer getUserId() {
+	public Integer getcustomerId() {
 		return customerId;
 	}
-	public void setUserId(Integer customerId) {
+	public void setcustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
 	public String getCustomerName() {

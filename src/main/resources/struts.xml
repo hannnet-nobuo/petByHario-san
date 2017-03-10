@@ -143,6 +143,18 @@
             <result>/WEB-INF/jsp/petCustomerNew.jsp</result>            
         </action>
         
+        <action name="PetItemAdmin" class="jp.hannet.sample.action.PetItemAdminAction">
+            <result>/WEB-INF/jsp/petItemAdmin.jsp</result>            
+        </action>
+        
+        <action name="PetItemEdit" class="jp.hannet.sample.action.PetItemEditAction">
+            <result>/WEB-INF/jsp/petItemEdit.jsp</result>            
+        </action>
+        
+        <action name="PetItemNew" class="jp.hannet.sample.action.PetItemNewAction">
+            <result>/WEB-INF/jsp/petItemNew.jsp</result>            
+        </action>
+        
 		        
         
         

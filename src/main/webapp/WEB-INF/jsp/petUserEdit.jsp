@@ -12,7 +12,7 @@
 		<s:textfield label="ユーザーID" name="userId" readonly="true"/>
 		<s:textfield label="ユーザー名" name="userName" />
 		<s:textfield label="パスワード" name="userPass" />
-		<s:submit type="button" value="%{id}" name="delid" >削除</s:submit>
+		<s:submit type="button" value="userId" name="delid" >削除</s:submit>
 		<s:submit type="button" value="update" name="update" >確定</s:submit>
 	</s:form>
 	<a href="<s:url namespace="/" action="PetUserAdmin" />">検索に戻る</a>

@@ -1,5 +1,9 @@
 package jp.hannet.sample.action;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import org.apache.struts2.dispatcher.HttpParameters;
 import org.apache.struts2.interceptor.HttpParametersAware;
 
@@ -8,7 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import jp.hannet.sample.dao.PetCustomerEditDao;
 import jp.hannet.sample.model.PetCustomerMapping;
 
-public class PetCustomerEditAction extends ActionSupport {
+public class PetCustomerEditAction extends ActionSupport implements HttpParametersAware{
 	
 	private static final long serialVersionUID = -3521141713234828082L;
 	private String editid;
@@ -27,7 +31,27 @@ public class PetCustomerEditAction extends ActionSupport {
 	private String update;
 	private HttpParameters param;
 	private Integer delid;
+	private String insYmd;
+	private String updYmd;
 	
+	private List<String> selectSex;
+	
+	
+	public List<String> getSelectSex() {
+		return selectSex;
+	}
+
+	public void setSelectSex(List<String> selectSex) {
+		this.selectSex = selectSex;
+	}
+	
+	public void SelectAction(){
+		
+		selectSex = new ArrayList<String>();
+		selectSex.add("M");
+		selectSex.add("F");
+	}
+
 	public String getUpdate() {
 		return update;
 	}
@@ -153,6 +177,22 @@ public class PetCustomerEditAction extends ActionSupport {
 
 
 
+	public String getInsYmd() {
+		return insYmd;
+	}
+
+	public void setInsYmd(String insYmd) {
+		this.insYmd = insYmd;
+	}
+
+	public String getUpdYmd() {
+		return updYmd;
+	}
+
+	public void setUpdYmd(String updYmd) {
+		this.updYmd = updYmd;
+	}
+
 	public String execute() throws Exception {
 		PetCustomerEditDao dao = new PetCustomerEditDao();
 
@@ -191,6 +231,7 @@ public class PetCustomerEditAction extends ActionSupport {
 			map.setTel(tel);
 			map.setEmail(email);
 			map.setBirthYmd(birthYmd);
+			map.setUpdYmd(new Date());
 			
 			dao.update(map);
 		}

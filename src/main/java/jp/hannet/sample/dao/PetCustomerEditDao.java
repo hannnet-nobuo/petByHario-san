@@ -54,7 +54,7 @@ public class PetCustomerEditDao {
 			Root<PetCustomerMapping> root = cr.from( PetCustomerMapping.class );
 			cr.select(root)
 			.where(
-					builder.equal(root.get("id"), id)
+					builder.equal(root.get("customerId"), id)
 					);
 			
 			// 結果取得

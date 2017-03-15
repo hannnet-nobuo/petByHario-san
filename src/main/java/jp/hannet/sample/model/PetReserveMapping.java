@@ -1,6 +1,7 @@
 package jp.hannet.sample.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,8 +25,8 @@ public class PetReserveMapping implements Serializable {
 	private String checkInYmd;
 	private String checkOutYmd;
 	private Integer sellNo;
-	private String insYmd;
-	private String updYmd;
+	private Date insYmd;
+	private Date updYmd;
 	
 	
 	public Integer getReserveId() {
@@ -64,16 +65,16 @@ public class PetReserveMapping implements Serializable {
 	public void setSellNo(Integer sellNo) {
 		this.sellNo = sellNo;
 	}
-	public String getInsYmd() {
+	public Date getInsYmd() {
 		return insYmd;
 	}
-	public void setInsYmd(String insYmd) {
+	public void setInsYmd(Date insYmd) {
 		this.insYmd = insYmd;
 	}
-	public String getUpdYmd() {
+	public Date getUpdYmd() {
 		return updYmd;
 	}
-	public void setUpdYmd(String updYmd) {
+	public void setUpdYmd(Date updYmd) {
 		this.updYmd = updYmd;
 	}
 

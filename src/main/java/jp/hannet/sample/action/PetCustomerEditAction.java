@@ -30,7 +30,7 @@ public class PetCustomerEditAction extends ActionSupport implements HttpParamete
 	private String birthYmd;
 	private String update;
 	private HttpParameters param;
-	private Integer delid;
+	private String delete;
 	private String insYmd;
 	private String updYmd;
 	
@@ -164,12 +164,12 @@ public class PetCustomerEditAction extends ActionSupport implements HttpParamete
 		return customerId;
 	}
 	
-	public Integer getDelid() {
-		return delid;
+	public String getDelete() {
+		return delete;
 	}
 
-	public void setDelid(Integer delid) {
-		this.delid = delid;
+	public void setDelete(String delete) {
+		this.delete = delete;
 	}
 
 	
@@ -236,9 +236,9 @@ public class PetCustomerEditAction extends ActionSupport implements HttpParamete
 			dao.update(map);
 		}
 		
-		if (this.delid != null) {
+		if (this.delete != null && customerId !=null	) {
 			PetCustomerMapping delMap = new PetCustomerMapping();
-			delMap.setCustomerId(delid);
+			delMap.setCustomerId(customerId);
 			// 削除
 			dao.delete(delMap);
 		}

@@ -3,13 +3,14 @@ package jp.hannet.sample.action;
 import java.util.Date;
 
 import org.apache.struts2.dispatcher.HttpParameters;
+import org.apache.struts2.interceptor.HttpParametersAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import jp.hannet.sample.dao.PetItemEditDao;
 import jp.hannet.sample.model.PetItemMapping;
 
-public class PetItemEditAction extends ActionSupport {
+public class PetItemEditAction extends ActionSupport implements HttpParametersAware{
 	
 	private static final long serialVersionUID = -3521141713234828082L;
 	

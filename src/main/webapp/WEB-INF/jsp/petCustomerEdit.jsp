@@ -21,7 +21,7 @@
 		<s:textfield label="電話番号" name="tel" />
 		<s:textfield label="EMAIL" name="email" />
 		<s:textfield label="生年月日" name="birthYmd" />
-		<s:submit type="button" value="%{id}" name="delid" >削除</s:submit>
+		<s:submit type="button" value="delete" name="delete" >削除</s:submit>
 		<s:submit type="button" value="update" name="update" >確定</s:submit>
 	</s:form>
 	<a href="<s:url namespace="/" action="PetCustomerAdmin" />">検索に戻る</a>

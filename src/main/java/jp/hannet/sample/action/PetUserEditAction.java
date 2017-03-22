@@ -21,7 +21,7 @@ public class PetUserEditAction extends ActionSupport implements HttpParametersAw
 	private String updYmd;
 	private String update;
 	private HttpParameters param;
-	private Integer delid;
+	private String delete;
 	
 	public String getUpdate() {
 		return update;
@@ -63,13 +63,6 @@ public class PetUserEditAction extends ActionSupport implements HttpParametersAw
 		return userId;
 	}
 	
-	public Integer getDelid() {
-		return delid;
-	}
-
-	public void setDelid(Integer delid) {
-		this.delid = delid;
-	}
 	
 	public String getInsYmd() {
 		return insYmd;
@@ -88,7 +81,13 @@ public class PetUserEditAction extends ActionSupport implements HttpParametersAw
 	}
 	
 
-	
+	public String getDelete() {
+		return delete;
+	}
+
+	public void setDelete(String delete) {
+		this.delete = delete;
+	}
 
 	public String execute() throws Exception {
 		PetUserEditDao dao = new PetUserEditDao();
@@ -113,11 +112,12 @@ public class PetUserEditAction extends ActionSupport implements HttpParametersAw
 			dao.update(map);
 		}
 		
-		if (this.delid != null) {
+		if (this.delete != null && userId != null) {
 			PetUserMapping delMap = new PetUserMapping();
-			delMap.setUserId(delid);
+			delMap.setUserId(userId);
 			// 削除
 			dao.delete(delMap);
+			return "deletescceed";
 		}
 
         return SUCCESS;

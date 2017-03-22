@@ -11,7 +11,6 @@
 	<p><s:text name="msg" /></p>
 	<s:form action="PetCustomerNew">
 		
-		<s:textfield label="顧客ID" name="customerId" readonly="true"/>
 		<s:textfield label="顧客名" name="customerName" />
 		<s:textfield label="顧客名かな" name="customerKana" />
 		<s:textfield label="郵便番号" name="postCd" />

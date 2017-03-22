@@ -13,7 +13,7 @@ import jp.hannet.sample.model.PetItemMapping;
 
 public class PetItemAdminDao {
 	
-	public List<PetItemMapping> likeById(Integer id) {
+	public List<PetItemMapping> likeById(String id) {
 		
 		Session session = DbAccess.getSession();
 		CriteriaBuilder builder = session.getCriteriaBuilder();

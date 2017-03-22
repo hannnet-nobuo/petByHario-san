@@ -14,7 +14,7 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 	
 	private static final long serialVersionUID = -3521141713234828082L;
 	
-	private Integer itemCd;
+	private String itemCd;
 	private String itemName;
 	private Integer itemAttribute;
 	private double itemCost;
@@ -23,13 +23,13 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 	private String updYmd;
 	private String editid;
 	private HttpParameters param;
-	private Integer delid;
+	private String delid;
 	private String update;
 	
-	public Integer getItemCd() {
+	public String getItemCd() {
 		return itemCd;
 	}
-	public void setItemCd(Integer itemCd) {
+	public void setItemCd(String itemCd) {
 		this.itemCd = itemCd;
 	}
 	public String getItemName() {
@@ -82,11 +82,11 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 	public void setEditid(String editid) {
 		this.editid = editid;
 	}
-	public Integer getDelid() {
+	public String getDelid() {
 		return delid;
 	}
 
-	public void setDelid(Integer delid) {
+	public void setDelid(String delid) {
 		this.delid = delid;
 	}
 	
@@ -100,8 +100,8 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 			
 		if (editid != null) {
 			// 結果取得
-			int num1 = Integer.parseInt( editid );
-			PetItemMapping map = dao.selectById(num1);
+			
+			PetItemMapping map = dao.selectById(editid);
 			itemCd = map.getItemCd();
 			itemName = map.getItemName();
 			itemAttribute = map.getItemAttribute();
@@ -114,11 +114,12 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 			dao.update(map);
 		}
 		
-		if (this.delid != null) {
+		if (delid != null && itemCd !=null) {
 			PetItemMapping delMap = new PetItemMapping();
-			delMap.setItemCd(delid);
+			delMap.setItemCd(itemCd);
 			// 削除
 			dao.delete(delMap);
+			return "deletescceed";
 		}
 
         return SUCCESS;

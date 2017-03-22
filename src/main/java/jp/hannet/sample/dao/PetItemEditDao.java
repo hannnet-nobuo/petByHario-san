@@ -12,7 +12,7 @@ import jp.hannet.sample.model.PetItemMapping;
 
 public class PetItemEditDao {
 	
-public PetItemMapping selectById(Integer id) {
+public PetItemMapping selectById(String id) {
 		
 		PetItemMapping map = null;
 		if (id != null) {
@@ -23,7 +23,7 @@ public PetItemMapping selectById(Integer id) {
 			Root<PetItemMapping> root = cr.from( PetItemMapping.class );
 			cr.select(root)
 			.where(
-					builder.equal(root.get("ItemCd"), id)
+					builder.equal(root.get("itemCd"), id)
 					);
 			
 			// 結果取得

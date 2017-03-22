@@ -150,7 +150,8 @@
         </action>
         
         <action name="PetItemEdit" class="jp.hannet.sample.action.PetItemEditAction">
-            <result>/WEB-INF/jsp/petItemEdit.jsp</result>            
+            <result>/WEB-INF/jsp/petItemEdit.jsp</result>
+            <result type="redirectAction" name="deletescceed">PetItemAdmin</result>            
         </action>
         
         <action name="PetItemNew" class="jp.hannet.sample.action.PetItemNewAction">

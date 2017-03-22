@@ -9,7 +9,7 @@ public class PetItemNewAction extends ActionSupport {
 	
 private static final long serialVersionUID = -3521141713234828082L;
 	
-	private Integer itemCd;
+	private String itemCd;
 	private String itemName;
 	private Integer itemAttribute;
 	private double itemCost;
@@ -19,10 +19,10 @@ private static final long serialVersionUID = -3521141713234828082L;
 	private String msg;
 	private String insert;
 	
-	public Integer getItemCd() {
+	public String getItemCd() {
 		return itemCd;
 	}
-	public void setItemCd(Integer itemCd) {
+	public void setItemCd(String itemCd) {
 		this.itemCd = itemCd;
 	}
 	public String getItemName() {

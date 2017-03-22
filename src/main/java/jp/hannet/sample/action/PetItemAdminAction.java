@@ -21,7 +21,7 @@ private static final long serialVersionUID = -3521141713234828082L;
 	private String itemCd ;
 	private String itemAt;
 	private String itemName;
-	private Integer s_id;
+	private String s_id;
 	private List<PetItemMapping> itemMappings;
 	
 	public String getItemCd() {
@@ -45,7 +45,7 @@ private static final long serialVersionUID = -3521141713234828082L;
 	}
 
 	
-	public List<PetItemMapping> getUsers() {
+	public List<PetItemMapping> getItems() {
 		return itemMappings;
 	}
 	

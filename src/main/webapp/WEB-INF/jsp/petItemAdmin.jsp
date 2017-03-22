@@ -20,9 +20,10 @@
 		  	<s:iterator value="items"> 
 				<tr>
 					<td>
-						<a href="<s:url namespace="/" action="PetItemEdit" ><s:param name="editid" ><s:property value="itemId" /></s:param></s:url>" ><s:property value="itemId" /></a>
+						<a href="<s:url namespace="/" action="PetItemEdit" ><s:param name="editid" ><s:property value="itemCd" /></s:param></s:url>" ><s:property value="itemCd" /></a>
 					</td>
 					
+					<td><s:property value="itemAt" /></td>
 					<td><s:property value="itemName" /></td>
 					
 					

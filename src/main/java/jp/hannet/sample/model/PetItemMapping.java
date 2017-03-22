@@ -21,7 +21,7 @@ public class PetItemMapping implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
 	
-	private Integer itemCd;
+	private String itemCd;
 	private String itemName;
 	private Integer itemAttribute;
 	private double itemCost;
@@ -30,10 +30,10 @@ public class PetItemMapping implements Serializable {
 	private Date updYmd;
 	
 	
-	public Integer getItemCd() {
+	public String getItemCd() {
 		return itemCd;
 	}
-	public void setItemCd(Integer itemCd) {
+	public void setItemCd(String itemCd) {
 		this.itemCd = itemCd;
 	}
 	public String getItemName() {

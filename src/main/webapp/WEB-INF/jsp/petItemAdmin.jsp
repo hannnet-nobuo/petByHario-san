@@ -23,7 +23,7 @@
 						<a href="<s:url namespace="/" action="PetItemEdit" ><s:param name="editid" ><s:property value="itemCd" /></s:param></s:url>" ><s:property value="itemCd" /></a>
 					</td>
 					
-					<td><s:property value="itemAt" /></td>
+					<td><s:property value="itemAttributeName" /></td>
 					<td><s:property value="itemName" /></td>
 					
 					

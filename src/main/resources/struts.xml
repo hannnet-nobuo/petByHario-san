@@ -116,7 +116,8 @@
         </action>
         
         <action name="PetLogin" class="jp.hannet.sample.action.PetLoginAction">
-            <result>/WEB-INF/jsp/petLogin.jsp</result>            
+            <result>/WEB-INF/jsp/petLogin.jsp</result>
+            <result name="success" >/WEB-INF/jsp/petMain.jsp</result>            
         </action>
         
         <action name="PetUserAdmin" class="jp.hannet.sample.action.PetUserAdminAction">
@@ -156,6 +157,19 @@
         
         <action name="PetItemNew" class="jp.hannet.sample.action.PetItemNewAction">
             <result>/WEB-INF/jsp/petItemNew.jsp</result>            
+        </action>
+        
+        <action name="PetSellAdmin" class="jp.hannet.sample.action.PetSellAdminAction">
+            <result>/WEB-INF/jsp/petSellAdmin.jsp</result>            
+        </action>
+        
+        <action name="PetSellEdit" class="jp.hannet.sample.action.PetSellEditAction">
+            <result>/WEB-INF/jsp/petSellEdit.jsp</result>
+            <result type="redirectAction" name="deletescceed">PetSellAdmin</result>            
+        </action>
+        
+        <action name="PetSellNew" class="jp.hannet.sample.action.PetSellNewAction">
+            <result>/WEB-INF/jsp/petSellNew.jsp</result>            
         </action>
         
         

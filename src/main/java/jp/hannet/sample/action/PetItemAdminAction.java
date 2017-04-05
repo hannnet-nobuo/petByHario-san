@@ -19,7 +19,7 @@ public class PetItemAdminAction extends ActionSupport {
 private static final long serialVersionUID = -3521141713234828082L;
 	
 	private String itemCd ;
-	private String itemAt;
+	private String itemAttributeName;
 	private String itemName;
 	private String s_id;
 	private List<PetItemMapping> itemMappings;
@@ -30,11 +30,11 @@ private static final long serialVersionUID = -3521141713234828082L;
 	public void setItemCd(String itemCd) {
 		this.itemCd = itemCd;
 	}
-	public String getItemAt() {
-		return itemAt;
+	public String getItemAttributeName() {
+		return itemAttributeName;
 	}
-	public void setItemAt(String itemAt) {
-		this.itemAt = itemAt;
+	public void setItemAttributeName(String itemAttributeName) {
+		this.itemAttributeName = itemAttributeName;
 	}
 	
 	public String getItemName() {

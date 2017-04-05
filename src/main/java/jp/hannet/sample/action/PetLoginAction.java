@@ -1,17 +1,25 @@
 package jp.hannet.sample.action;
 
+import java.util.Date;
+import java.util.Map;
+
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import jp.hannet.sample.dao.PetLoginDao;
 import jp.hannet.sample.model.PetUserMapping;
 
-public class PetLoginAction extends ActionSupport {
+public class PetLoginAction extends ActionSupport  implements SessionAware {
 	
 	private static final long serialVersionUID = 5294876177832560670L;
 	private Integer userId;
 	private String userPass;
 	private String login; 
 	private String msg;
+	SessionMap<String,String> sessionmap;
 	
 	public String getMsg() {
 		return msg;
@@ -40,6 +48,13 @@ public class PetLoginAction extends ActionSupport {
 	public void setLogin(String login) {
 		this.login = login;
 	}
+	
+	public void setSession(Map map) {
+		// TODO Auto-generated method stub
+		sessionmap=(SessionMap)map;
+		sessionmap.put("login", "true");
+		
+	}
 
 
 	
@@ -47,21 +62,21 @@ public class PetLoginAction extends ActionSupport {
 	
 public String execute() throws Exception {
 		
-		PetLoginDao dao = new PetLoginDao();
 		
-		if (userId != null) {
-			// セッション取得
-			if (dao.existById(userId)) {
-				PetUserMapping map = new PetUserMapping();
-				map.setUserId(userId);
-				map.setUserPass(userPass);
-				
-			} else {
-				msg = "ログイン出来ません";
-			}
-		}
-		return SUCCESS;
-	}
+		
+	if(userId != null && userPass != null) {
+		
+		if(PetLoginDao.validate(userId, userPass)){  
+	        return "success";  
+	    }  
+	    else{  
+	        return "error";  
+	    }  
+		
+	
+}
+	return SUCCESS;
 
+	}
 
 }

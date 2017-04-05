@@ -47,6 +47,8 @@
 		<property name="itemPrice" type="double" column="ITEM_PRICE" />
 		<property name="insYmd" update="false" insert="false" type="timestamp" column="INS_YMD" />
 		<property name="updYmd" update="true" insert="false" type="timestamp" column="UPD_YMD" />
+		<one-to-one name="item_attribute" class="jp.hannet.sample.model.PetItemAttributeMapping" constrained="true"></one-to-one>
+		
 	</class>
 	
 	<class name="jp.hannet.sample.model.PetReserveMapping" table="reserve">

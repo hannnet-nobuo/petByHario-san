@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="jp.hannet.sample.service">
+
+	<class name="jp.hannet.sample.model.PetReserveMapping" table="reserve">
+		
+		<id name="reserveId" type="int" unsaved-value="null">
+			<generator class="increment"></generator>
+		</id>
+		<property name="startYmd" type="string" column="START_YMD" />
+		<property name="endYmd" type="string" column="END_YMD" />
+		<property name="checkInYmd" type="string" column="CHECK_IN_YMD" />
+		<property name="checkOutYmd" type="string" column="CHECK_OUT_YMD" />
+		<property name="sellNo" type="string" column="SELL_NO" />
+		<property name="insYmd" update="false" insert="false" type="timestamp" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="timestamp" column="UPD_YMD" />
+	</class>
+</hibernate-mapping>

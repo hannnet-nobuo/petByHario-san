@@ -9,7 +9,12 @@
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">rootsh04</property>	
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>	
-		<mapping resource="PetMapping.hbm.xml" />	
+		<mapping resource="PetCustomerMapping.hbm.xml" />
+		<mapping resource="PetItemAttributeMapping.hbm.xml" />
+		<mapping resource="PetItemMapping.hbm.xml" />
+		<mapping resource="PetReserveMapping.hbm.xml" />
+		<mapping resource="PetSellMapping.hbm.xml" />
+		<mapping resource="PetUserMapping.hbm.xml" />	
 	</session-factory>
 	
 	

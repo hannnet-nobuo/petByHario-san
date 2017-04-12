@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="jp.hannet.sample.service">
+	<class name="jp.hannet.sample.model.PetItemAttributeMapping" table="item_attribute">
+		
+		<id name="itemAttributeNumber" type="int" unsaved-value="null">
+			<column name="ITEM_ATTRIBUTE_NO" sql-type="int" not-null="true"></column>
+			<generator class="identity"></generator>
+			
+		</id>
+		<property name="itemAttributeName" type="string" column="ITEM_ATTRIBUTE_NM" />
+		
+		<set name="petItemMapping" table="item" inverse="true" lazy="true" fetch="select">
+			<key>
+				<column name="ITEM_ATTRIBUTE_NO" not-null="true"/>
+			</key>
+			<one-to-many class="jp.hannet.sample.model.PetItemMapping" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

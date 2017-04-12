@@ -1,5 +1,7 @@
 package jp.hannet.sample.action;
 
+import java.util.Date;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import jp.hannet.sample.dao.PetCustomerNewDao;
@@ -143,6 +145,16 @@ public class PetCustomerNewAction extends ActionSupport {
 			map.setCustomerId(customerId);
 			map.setCustomerName(customerName);
 			map.setCustomerKana(customerKana);
+			map.setSex(sex);
+			map.setPostCd(postCd);
+			map.setAddress1(address1);
+			map.setAddress2(address2);
+			map.setAddress3(address3);
+			map.setAddress4(address4);
+			map.setTel(tel);
+			map.setEmail(email);
+			map.setBirthYmd(birthYmd);
+			map.setUpdYmd(new Date());
 			dao.save(map);
 			msg = "書き込みました";
 		} else {

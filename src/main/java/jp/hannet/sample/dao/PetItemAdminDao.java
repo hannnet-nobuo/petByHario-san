@@ -10,6 +10,7 @@ import org.hibernate.Session;
 
 import jp.hannet.sample.common.DbAccess;
 import jp.hannet.sample.model.PetItemMapping;
+import jp.hannet.sample.model.PetItemAttributeMapping;
 
 public class PetItemAdminDao {
 	

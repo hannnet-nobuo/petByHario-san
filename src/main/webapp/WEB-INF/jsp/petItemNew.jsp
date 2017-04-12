@@ -13,7 +13,7 @@
 		
 		<s:textfield label="商品コード" name="itemCd" />
 		<s:textfield label="商品名" name="itemName" />
-		<s:textfield label="商品属性" name="itemAttribute" />
+		<s:textfield label="商品属性" name="petItemAttributeMapping" />
 		<s:textfield label="原価" name="itemCost" />
 		<s:textfield label="売値" name="itemPrice" />
 		<s:submit type="button" value="insert" name="insert" >登録</s:submit>

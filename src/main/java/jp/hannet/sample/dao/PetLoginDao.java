@@ -19,16 +19,16 @@ import jp.hannet.sample.model.PetUserMapping;
 
 public class PetLoginDao {
 
-	public static boolean validate(Integer userId,String userpass){  
+	public boolean validate(Integer userId,String userpass){  
 		 boolean status=false;
 		 String strId = Integer.toString(userId);
-		  try{  
-		   Class.forName("oracle.jdbc.driver.OracleDriver");  
+		  try{	
+		   Class.forName("com.mysql.jdbc.Driver");  
 		   Connection con=DriverManager.getConnection(  
-		   "jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  
+		   "jdbc:mysql://localhost.lo:3306/petbooking","root","rootsh04");  
 		     
 		   PreparedStatement ps=con.prepareStatement(  
-		     "select * from user3333 where name=? and password=?");  
+		     "select * from user where USER_ID=? and USER_PW=?");  
 		   ps.setString(1,strId);  
 		   ps.setString(2,userpass);  
 		   ResultSet rs=ps.executeQuery();  

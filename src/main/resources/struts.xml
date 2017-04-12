@@ -111,13 +111,17 @@
         
         <!-- pet -->
         
-        <action name="PetMain" class="jp.hannet.sample.action.PetMainAction">
-            <result>/WEB-INF/jsp/petMain.jsp</result>            
-        </action>
+        
+        
         
         <action name="PetLogin" class="jp.hannet.sample.action.PetLoginAction">
-            <result>/WEB-INF/jsp/petLogin.jsp</result>
-            <result name="success" >/WEB-INF/jsp/petMain.jsp</result>            
+            <result name="success">/WEB-INF/jsp/petMain.jsp</result>
+            <result name="error">/WEB-INF/jsp/petLogin.jsp</result>
+                     
+        </action>
+        
+        <action name="Input">
+        	<result>/WEB-INF/jsp/petLogin.jsp</result>
         </action>
         
         <action name="PetUserAdmin" class="jp.hannet.sample.action.PetUserAdminAction">

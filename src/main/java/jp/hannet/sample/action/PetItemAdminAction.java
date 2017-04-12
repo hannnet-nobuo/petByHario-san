@@ -12,6 +12,7 @@ import jp.hannet.sample.dao.PetUserAdminDao;
 import jp.hannet.sample.model.MyMapping;
 import jp.hannet.sample.model.PersonelMapping;
 import jp.hannet.sample.model.PetCustomerMapping;
+import jp.hannet.sample.model.PetItemAttributeMapping;
 import jp.hannet.sample.model.PetItemMapping;
 
 public class PetItemAdminAction extends ActionSupport {
@@ -20,9 +21,12 @@ private static final long serialVersionUID = -3521141713234828082L;
 	
 	private String itemCd ;
 	private String itemAttributeName;
+	private PetItemAttributeMapping petItemAttributeMapping;
 	private String itemName;
 	private String s_id;
 	private List<PetItemMapping> itemMappings;
+	
+	
 	
 	public String getItemCd() {
 		return itemCd;
@@ -47,6 +51,13 @@ private static final long serialVersionUID = -3521141713234828082L;
 	
 	public List<PetItemMapping> getItems() {
 		return itemMappings;
+	}
+	
+	public PetItemAttributeMapping getPetItemAttributeMapping() {
+		return petItemAttributeMapping;
+	}
+	public void setPetItemAttributeMapping (PetItemAttributeMapping petItemAttributeMapping) {
+		this.petItemAttributeMapping = petItemAttributeMapping;
 	}
 	
 	

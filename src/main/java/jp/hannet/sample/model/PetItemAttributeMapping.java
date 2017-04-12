@@ -1,6 +1,8 @@
 package jp.hannet.sample.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,6 +24,15 @@ public class PetItemAttributeMapping implements Serializable {
 	
 	private Integer itemAttributeNumber;
 	private String itemAttributeName;
+	private Set<PetItemMapping> petItemMapping = new HashSet<PetItemMapping>(0);
+	
+	
+	public PetItemAttributeMapping() {
+		
+	}
+	
+	
+	
 	
 	
 	public Integer getItemAttributeNumber() {
@@ -36,7 +47,11 @@ public class PetItemAttributeMapping implements Serializable {
 	public void setItemAttributeName(String itemAttributeName) {
 		this.itemAttributeName = itemAttributeName;
 	}
-
-
-
+	public Set<PetItemMapping> getPetItemMapping() {
+		return petItemMapping;
+	}
+	public void setPetItemMapping(Set<PetItemMapping> petItemMapping) {
+		this.petItemMapping = petItemMapping;
+	}
+	
 }

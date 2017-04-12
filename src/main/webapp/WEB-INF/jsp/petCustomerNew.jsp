@@ -13,6 +13,7 @@
 		
 		<s:textfield label="顧客名" name="customerName" />
 		<s:textfield label="顧客名かな" name="customerKana" />
+		<s:select label="性別" headerKey="-1" headerValue="性別選択" list="#{'M':'男', 'F':'女'}" name="sex" />
 		<s:textfield label="郵便番号" name="postCd" />
 		<s:textfield label="住所１" name="address1" />
 		<s:textfield label="住所２" name="address2" />

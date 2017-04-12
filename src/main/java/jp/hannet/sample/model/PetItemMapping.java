@@ -26,12 +26,20 @@ public class PetItemMapping implements Serializable {
 	
 	private String itemCd;
 	private String itemName;
-	private Integer itemAttribute;
+	
+	
 	private double itemCost;
 	private double itemPrice;
 	private Date insYmd;
 	private Date updYmd;
-	private Integer itemAttributeNumber;
+	private PetItemAttributeMapping petItemAttributeMapping;
+	
+	
+	
+	
+	
+	public PetItemMapping() {
+	}
 	
 	
 	
@@ -47,12 +55,8 @@ public class PetItemMapping implements Serializable {
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-	public Integer getItemAttribute() {
-		return itemAttribute;
-	}
-	public void setItemAttribute(Integer itemAttribute) {
-		this.itemAttribute = itemAttribute;
-	}
+	
+	
 	public double getItemCost() {
 		return itemCost;
 	}
@@ -77,26 +81,15 @@ public class PetItemMapping implements Serializable {
 	public void setUpdYmd(Date updYmd) {
 		this.updYmd = updYmd;
 	}
-	
-	
-	@OneToOne
-	@JoinColumn(name = "itemAttributeNumber")
-	
-	private PetItemAttributeMapping petItemAttributeMapping;
-	
 	public PetItemAttributeMapping getPetItemAttributeMapping() {
 		return petItemAttributeMapping;
 	}
 	
-	public void setItemAttributeName(PetItemAttributeMapping petItemAttributeMapping) {
+	public void setPetItemAttributeMapping (PetItemAttributeMapping petItemAttributeMapping) {
 		this.petItemAttributeMapping = petItemAttributeMapping;
 	}
-	public Integer getItemAttributeNumber() {
-		return itemAttributeNumber;
-	}
-	public void setItemAttributeNumber(Integer itemAttributeNumber) {
-		this.itemAttributeNumber = itemAttributeNumber;
-	}
+	
+	
 	
 
 }

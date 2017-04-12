@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="jp.hannet.sample.service">
+
+	<class name="jp.hannet.sample.model.PetUserMapping" table="user">
+		
+		<id name="userId" type="int" unsaved-value="null">
+			<column name="USER_ID" sql-type="int" not-null="true"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="userName" type="string" column="USER_NM" />
+		<property name="userPass" type="string" column="USER_PW" />
+		<property name="insYmd" update="false" insert="false" type="timestamp" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="timestamp" column="UPD_YMD" />
+	</class>
+</hibernate-mapping>

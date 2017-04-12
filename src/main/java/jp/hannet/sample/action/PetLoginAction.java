@@ -61,22 +61,30 @@ public class PetLoginAction extends ActionSupport  implements SessionAware {
 
 	
 public String execute() throws Exception {
+	msg = "";
 		
-		
-		
+	PetLoginDao dao = new PetLoginDao();
+	
 	if(userId != null && userPass != null) {
 		
-		if(PetLoginDao.validate(userId, userPass)){  
-	        return "success";  
+		if(dao.validate(userId, userPass)){  
+	        return SUCCESS;
+
 	    }  
 	    else{  
-	        return "error";  
+	        return ERROR;  
 	    }  
 		
-	
-}
-	return SUCCESS;
-
+		
+	} else {
+		return ERROR;
 	}
+		
+}
 
 }
+	
+
+	
+
+

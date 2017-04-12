@@ -3,6 +3,7 @@ package jp.hannet.sample.action;
 import com.opensymphony.xwork2.ActionSupport;
 
 import jp.hannet.sample.dao.PetItemNewDao;
+import jp.hannet.sample.model.PetItemAttributeMapping;
 import jp.hannet.sample.model.PetItemMapping;
 
 public class PetItemNewAction extends ActionSupport {
@@ -18,6 +19,8 @@ private static final long serialVersionUID = -3521141713234828082L;
 	private String updYmd;
 	private String msg;
 	private String insert;
+	
+	private PetItemAttributeMapping petItemAttribute;
 	
 	public String getItemCd() {
 		return itemCd;
@@ -74,6 +77,12 @@ private static final long serialVersionUID = -3521141713234828082L;
 		this.insert = insert;
 	}
 	
+	public PetItemAttributeMapping getPetItemAttribute() {
+		return petItemAttribute;
+	}
+	public void setPetItemAttribute(PetItemAttributeMapping petItemAttribute) {
+		this.petItemAttribute = petItemAttribute;
+	}
 	public String execute() throws Exception {
 		msg = "";
 		PetItemNewDao dao = new PetItemNewDao();
@@ -84,7 +93,7 @@ private static final long serialVersionUID = -3521141713234828082L;
 			PetItemMapping map = new PetItemMapping();
 			map.setItemCd(itemCd);
 			map.setItemName(itemName);
-			map.setItemAttribute(itemAttribute);
+			map.setPetItemAttributeMapping(petItemAttribute);
 			map.setItemCost(itemCost);
 			map.setItemPrice(itemPrice);
 			dao.save(map);

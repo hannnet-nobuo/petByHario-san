@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="jp.hannet.sample.service">
+	<class name="jp.hannet.sample.model.PetCustomerMapping" table="customer">
+		
+		<id name="customerId" type="int" unsaved-value="null">
+			<column name="CUSTOMER_ID" sql-type="int" not-null="true"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="customerName" type="string" column="CUSTOMER_NM" />
+		<property name="customerKana" type="string" column="CUSTOMER_KN" />
+		<property name="sex" type="string" column="SEX" />
+		<property name="postCd" type="string" column="POST_CD" />
+		<property name="address1" type="string" column="ADDRESS1" />
+		<property name="address2" type="string" column="ADDRESS2" />
+		<property name="address3" type="string" column="ADDRESS3" />
+		<property name="address4" type="string" column="ADDRESS4" />
+		<property name="tel" type="string" column="TEL" />
+		<property name="email" type="string" column="EMAIL" />
+		<property name="birthYmd" type="string" column="BIRTH_YMD" />
+		<property name="insYmd" update="false" insert="false" type="timestamp" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="timestamp" column="UPD_YMD" />
+
+	</class>
+
+</hibernate-mapping>

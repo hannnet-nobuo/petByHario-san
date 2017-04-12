@@ -11,7 +11,7 @@
 	<p><s:text name="msg" /></p>
 	<s:form action="PetLogin">
 		<s:textfield label="ユーザーID" name="userId" />
-		<s:textfield label="パスワード" name="userPass" />
+		<s:password label="パスワード" name="userPass" />
 		<s:submit value="login">ログイン</s:submit>
 	</s:form>
 		

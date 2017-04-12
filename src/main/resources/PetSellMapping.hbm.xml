@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="jp.hannet.sample.service">
+	<class name="jp.hannet.sample.model.PetSellMapping" table="sell">
+		
+		<id name="sellNo" type="int" unsaved-value="null">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="sellYmd" type="string" column="SELL_YMD" />
+		<property name="customerId" type="string" column="CUSTOMER_ID" />
+		<property name="itemCd" type="string" column="ITEM_CD" />
+		<property name="quantity" type="string" column="QUANTITY" />
+		<property name="price" type="string" column="PRICE" />
+		<property name="includingTax" type="string" column="INCLUDING_TAX" />
+		<property name="tax" type="string" column="TAX" />
+		<property name="insYmd" update="false" insert="false" type="timestamp" column="INS_YMD" />
+		<property name="updYmd" update="true" insert="false" type="timestamp" column="UPD_YMD" />
+	</class>
+</hibernate-mapping>

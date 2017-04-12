@@ -8,6 +8,7 @@ import org.apache.struts2.interceptor.HttpParametersAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import jp.hannet.sample.dao.PetItemEditDao;
+import jp.hannet.sample.model.PetItemAttributeMapping;
 import jp.hannet.sample.model.PetItemMapping;
 
 public class PetItemEditAction extends ActionSupport implements HttpParametersAware{
@@ -16,7 +17,7 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 	
 	private String itemCd;
 	private String itemName;
-	private Integer itemAttribute;
+	private PetItemAttributeMapping itemAttribute;
 	private double itemCost;
 	private double itemPrice;
 	private String insYmd;
@@ -25,6 +26,8 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 	private HttpParameters param;
 	private String delid;
 	private String update;
+	
+	private PetItemAttributeMapping petItemAttribute;
 	
 	public String getItemCd() {
 		return itemCd;
@@ -38,10 +41,10 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-	public Integer getItemAttribute() {
+	public PetItemAttributeMapping getItemAttribute() {
 		return itemAttribute;
 	}
-	public void setItemAttribute(Integer itemAttribute) {
+	public void setItemAttribute(PetItemAttributeMapping itemAttribute) {
 		this.itemAttribute = itemAttribute;
 	}
 	public double getItemCost() {
@@ -91,6 +94,12 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 	}
 	
 	
+	public PetItemAttributeMapping getPetItemAttribute() {
+		return petItemAttribute;
+	}
+	public void setPetItemAttribute(PetItemAttributeMapping petItemAttribute) {
+		this.petItemAttribute = petItemAttribute;
+	}
 	public String execute() throws Exception {
 		PetItemEditDao dao = new PetItemEditDao();
 
@@ -104,12 +113,12 @@ public class PetItemEditAction extends ActionSupport implements HttpParametersAw
 			PetItemMapping map = dao.selectById(editid);
 			itemCd = map.getItemCd();
 			itemName = map.getItemName();
-			itemAttribute = map.getItemAttribute();
+			petItemAttribute = map.getPetItemAttributeMapping();
 		} else if (update != null && itemCd != null) {
 			PetItemMapping map = new PetItemMapping();
 			map.setItemCd(itemCd);
 			map.setItemName(itemName);
-			map.setItemAttribute(itemAttribute);
+			map.setPetItemAttributeMapping(itemAttribute);
 			map.setUpdYmd(new Date());
 			dao.update(map);
 		}

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Map;
 
 import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.HttpParametersAware;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -12,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import jp.hannet.sample.dao.PetLoginDao;
 import jp.hannet.sample.model.PetUserMapping;
 
-public class PetLoginAction extends ActionSupport  implements SessionAware {
+public class PetLoginAction extends ActionSupport  implements SessionAware{
 	
 	private static final long serialVersionUID = 5294876177832560670L;
 	private Integer userId;
@@ -60,27 +61,32 @@ public class PetLoginAction extends ActionSupport  implements SessionAware {
 	
 
 	
-public String execute() throws Exception {
-	msg = "";
+	public String execute() throws Exception {
+		msg = "";
+			
+		PetLoginDao dao = new PetLoginDao();
+		PetUserMapping map = new PetUserMapping();
 		
-	PetLoginDao dao = new PetLoginDao();
+		if(userId != null && userPass != null) {
+			
+			userId = map.getUserId();
+			userPass = map.getUserPass();
+			
+			if(dao.validate(userId, userPass)){  
+		        return "login";
 	
-	if(userId != null && userPass != null) {
-		
-		if(dao.validate(userId, userPass)){  
-	        return SUCCESS;
-
-	    }  
-	    else{  
-	        return ERROR;  
-	    }  
-		
-		
-	} else {
-		return ERROR;
+		    }  
+		    else{  
+		        return ERROR;  
+		    }  
+			
+			
+		} else {
+			msg =  "";
+			return SUCCESS;
+		}
+			
 	}
-		
-}
 
 }
 	

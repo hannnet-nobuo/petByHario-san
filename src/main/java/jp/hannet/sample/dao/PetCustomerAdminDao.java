@@ -7,8 +7,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import org.hibernate.Session;
-import org.hibernate.query.Query;
-
 import jp.hannet.sample.common.DbAccess;
 import jp.hannet.sample.model.PetCustomerMapping;
 

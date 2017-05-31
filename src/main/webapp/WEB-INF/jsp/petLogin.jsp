@@ -12,7 +12,7 @@
 	<s:form action="PetLogin">
 		<s:textfield label="ユーザーID" name="userId" />
 		<s:password label="パスワード" name="userPass" />
-		<s:submit value="login">ログイン</s:submit>
+		<s:submit value="ログイン"/>
 	</s:form>
 		
 		

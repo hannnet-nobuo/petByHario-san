@@ -3,11 +3,11 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-<title>顧客登録</title>
+<title>ユーザー登録</title>
 <s:head />
 </head>
 <body>
-	<p>顧客登録</p>
+	<p>ユーザー登録</p>
 	<p><s:text name="msg" /></p>
 	<s:form action="PetUserNew">
 		
